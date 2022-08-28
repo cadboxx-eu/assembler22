@@ -23,9 +23,9 @@
         <!-- Add your site or application content here -->         
             <a-scene background="color: #ECECEC">
                 <a-assets>
-                    <a-asset-item src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/purple-heart-mesh.glb?v=1661694427720" ></a-asset-item>
+                    <a-asset-item id="hh" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/purple-heart-mesh.glb?v=1661694427720" ></a-asset-item>
                 </a-assets>
-                <a-entity></a-entity>
+                <a-entity id="heart" gltf-model="#hh" position="0 0 0" rotation="0 0 0" ></a-entity>
               <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" dynamic-body dragndrop click-impulse></a-box>
               <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" dynamic-body dragndrop click-impulse></a-sphere>
               <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" dynamic-body dragndrop click-impulse></a-cylinder>
