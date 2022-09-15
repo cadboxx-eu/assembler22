@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> 
+	<script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.1.2/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.1.0/dist/aframe-extras.min.js"></script>
+	<script src="https://unpkg.com/aframe-seek-position-component/dist/aframe-seek-position-component.min.js"></script> 
+	<script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script> 
+	<script src="https://unpkg.com/@editvr/aframe-dialog-popup-component@1.7.2/dist/aframe-dialog-popup-component.min.js"></script> 
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.0.0/dist/aframe-physics-system.min.js"></script> 
+    <script src="https://rawgit.com/protyze/aframe-physics-lerp-component/master/dist/aframe-physics-lerp-component.min.js"></script> 
+	<script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+	<script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script> 
+	
+	<title>Hemi Embed</title>
+
+<style>
+	#scene {
+  width: 1000px;
+  height: 500px;
+}
+</style>
+</head>
+<body>
+	<a-scene embedded id="scene">
+	<a-entity id="light" light="type:hemisphere;"></a-entity>  <a-entity 
+	            material="metalness: 0.1; roughness: 0.5; src: url(https://d2z6pp1b5cghw2.cloudfront.net/3f805b32-c95d-4109-b10f-308be54f718f/bd9dc47176b72bc5c32a2c78cc53c7a1.jpg)"
+	            obj-model="obj: url(https://d2z6pp1b5cghw2.cloudfront.net/3f805b32-c95d-4109-b10f-308be54f718f/model.obj);"
+	            scale="0.5 0.5 0.5"
+	            position="0 1.5 -2"
+	            rotation="0 90 0"
+	   ></a-entity>
+	</a-scene>
+	
+	<button id="skyinput">Set color to red</button>
+	
+	<button id="groundinput">Set groundColor to blue</button>
+
+	<script>
+	var skyinput = document.getElementById('skyinput')
+	var groundinput = document.getElementById('groundinput')
+	var light = document.getElementById('light')
+	
+	skyinput.addEventListener('click', function(event) {
+	  light.setAttribute('light', 'type:hemisphere;color:red')
+	})
+	
+	groundinput.addEventListener('click', function(event) {
+	  light.setAttribute('light', 'type:hemisphere;groundColor:blue')
+	})
+</script>
+
+
+</body>
+</html>
