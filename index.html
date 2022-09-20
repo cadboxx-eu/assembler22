@@ -220,16 +220,7 @@
         </script>
         
 		
-		<style>
-		button {
-			width: 70px;
-			height: 20px;
-			position: relative;
-			top: 1px;
-			z-index: 2;
-		}
-	</style>
-</head>
+	</head>
 	<body>
 		<script>
                 function setpartOrigin(target) {
@@ -1001,6 +992,39 @@
 	<!--<a-plane id="pm" rotation="-90 0 0" scale="15 15 15" side="double" color="yellow" opacity="0.2" ></a-plane>
 	--><a-sky color="lightblue"></a-sky>
 </a-scene>
-        
+        <script>
+        function exportGLTF(input, options) {
+            AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+        }
+
+        document.getElementById('export-scene').addEventListener('click', function () {
+            exportGLTF();
+        });
+
+        document.getElementById('export-scene-bin').addEventListener('click', function () {
+            exportGLTF(undefined, { binary: true });
+        });
+
+        document.getElementById('export-redbxx').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbxx'), { binary: true });
+        });
+
+        document.getElementById('export-redbyy').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbyy'), { binary: true });
+        });
+
+        document.getElementById('export-redbzz').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbzz'), { binary: true });
+        });
+
+        document.getElementById('export-two').addEventListener('click', function () {
+            exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
+        });
+
+        document.getElementById('export-selector').addEventListener('click', function () {
+            exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+        });
+
+    </script>
 	</body>
 </html>
